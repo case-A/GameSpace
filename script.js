@@ -14,6 +14,16 @@ function addReview(gameplayScore, visualScore, storyScore, overallScore, comment
 //Overall score should automatically average other scores
     // total of scores/ 3
     //gameplayScore + visualScore + storyScore/ 3
+    
+    function averageScores(reviewPosition) {
+        var gameplayScoreValue = reviews[reviewPosition].gameplayScore;
+        var visualScoreValue = reviews[reviewPosition].visualScore;
+        var storyScoreValue = reviews[reviewPosition].storyScore;
+        var totalScore = gameplayScoreValue + visualScoreValue + storyScoreValue;
+
+        var overallScore = Math.floor(totalScore /3);
+        return overallScore;
+    }
 //It should have a function to edit a review
     //need to access review index and individual review property and then property keys value.
         function editReview(reviewPosition, newGameplayScore, newVisualScore, newStoryScore, newCommentText){
