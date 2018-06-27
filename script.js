@@ -1,20 +1,18 @@
 var reviews = [];
 
-function addReview(gameplayScore, visualScore, storyScore, overallScore, comment){
+function addReview(gameplayScore, visualScore, storyScore, comment){
     reviews.push({
         "gameplayScore": gameplayScore,
         "visualScore": visualScore,
         "storyScore": storyScore,
-        "overallScore": overallScore,
+        "overallScore": Math.floor((gameplayScore + visualScore + storyScore)/3),
         "comment": comment
     });
     console.log(reviews);
 }
 
-//Overall score should automatically average other scores
-    // total of scores/ 3
-    //gameplayScore + visualScore + storyScore/ 3
-    
+
+//It should have a function that averages total overallScore    
     function averageScores(reviewPosition) {
         var gameplayScoreValue = reviews[reviewPosition].gameplayScore;
         var visualScoreValue = reviews[reviewPosition].visualScore;
@@ -35,4 +33,3 @@ function addReview(gameplayScore, visualScore, storyScore, overallScore, comment
         }
 
 // It should have a function to remove a review
-//It should have a function that averages total overallScore
