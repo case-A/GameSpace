@@ -14,7 +14,6 @@ function addReview(gameplayScore, visualScore, storyScore, comment){
 
 //It should have a function that averages total overallScore of reviews
 function overallScore() {
-    debugger;
     var overallScoresArray = []; 
     for(var i = 0; i < reviews.length; i++) {
        overallScoresArray.push(reviews[i].scoreAverage); 
