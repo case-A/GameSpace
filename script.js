@@ -23,13 +23,11 @@ function overallScore() {
         return total + num;
     }
     var totalScores = overallScoresArray.reduce(getSum, 0);
-    var overallScore = totalScores /reviews.length;
+    var overallScore = Math.floor(totalScores /reviews.length);
     return overallScore;
 } 
     
-
 //It should have a function to edit a review
-    //need to access review index and individual review property and then property keys value.
         function editReview(reviewPosition, newGameplayScore, newVisualScore, newStoryScore, newCommentText){
             reviews[reviewPosition].gameplayScore = newGameplayScore;
             reviews[reviewPosition].visualScore = newVisualScore;
@@ -39,3 +37,7 @@ function overallScore() {
         }
 
 // It should have a function to remove a review
+ function deleteReview(reviewPosition){
+    reviews.splice(reviewPosition, 1);
+    console.log(reviews);
+ }
